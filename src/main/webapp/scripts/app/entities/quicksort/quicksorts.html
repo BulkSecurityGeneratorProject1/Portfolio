@@ -51,9 +51,9 @@
             <tbody>
                 <tr ng-repeat="quicksort in quicksorts">
                     <td><a ui-sref="quicksort.detail({id:quicksort.id})">{{quicksort.id}}</a></td>
-                    <td>{{quicksort.unsorted}}</td>
-                    <td>{{quicksort.sorted}}</td>
-                    <td>{{quicksort.executionTime}} microseconds</td>
+                    <td>{{quicksort.unsorted |limitTo:30}}{{quicksort.unsorted.length > 30 ? '...' : ''}}</td>
+                    <td>{{quicksort.sorted |limitTo:30}}{{quicksort.sorted.length > 30 ? '...' : ''}}</td>
+                    <td>{{quicksort.executionTime |number}} microseconds</td>
                     <td>
                         <button type="submit"
                                 ui-sref="quicksort.detail({id:quicksort.id})"
