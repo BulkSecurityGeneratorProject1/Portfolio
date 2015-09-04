@@ -1,0 +1,29 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "unsorted",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "pattern"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesPattern": "^([0-9]+(\\-[0-9]+)*,*)+$"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "sorted",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "executionTime",
+            "fieldType": "Long"
+        }
+    ],
+    "dto": "no",
+    "pagination": "no"
+}
