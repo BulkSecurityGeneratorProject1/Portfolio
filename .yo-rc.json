@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "baseName": "Portfolio",
+    "packageName": "eu.thinking_aloud.portfolio",
+    "packageFolder": "eu/thinking_aloud/portfolio",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "enableTranslation": false,
+    "rememberMeKey": "7a6c60b5854562e80bf56f1ec10bd2bcfcbf304a"
+  }
+}
