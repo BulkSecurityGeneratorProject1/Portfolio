@@ -4,6 +4,7 @@ import eu.thinking_aloud.portfolio.Application;
 import eu.thinking_aloud.portfolio.domain.Quicksort;
 import eu.thinking_aloud.portfolio.repository.QuicksortRepository;
 
+import eu.thinking_aloud.portfolio.web.rest.util.QuickSorter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,13 +40,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest
 public class QuicksortResourceTest {
 
-    private static final String DEFAULT_UNSORTED = "SAMPLE_TEXT";
-    private static final String UPDATED_UNSORTED = "UPDATED_TEXT";
-    private static final String DEFAULT_SORTED = "SAMPLE_TEXT";
-    private static final String UPDATED_SORTED = "UPDATED_TEXT";
-
-    private static final Long DEFAULT_EXECUTION_TIME = 1L;
-    private static final Long UPDATED_EXECUTION_TIME = 2L;
+    private static final String DEFAULT_UNSORTED = "3,2,1";
+    private static final String UPDATED_UNSORTED = "4,3,2,1";
+    private static final String DEFAULT_SORTED = "1, 2, 3";
+    private static final String UPDATED_SORTED = "1, 2, 3, 4";
 
     @Inject
     private QuicksortRepository quicksortRepository;
@@ -71,7 +69,6 @@ public class QuicksortResourceTest {
         quicksort = new Quicksort();
         quicksort.setUnsorted(DEFAULT_UNSORTED);
         quicksort.setSorted(DEFAULT_SORTED);
-        quicksort.setExecutionTime(DEFAULT_EXECUTION_TIME);
     }
 
     @Test
@@ -91,7 +88,6 @@ public class QuicksortResourceTest {
         Quicksort testQuicksort = quicksorts.get(quicksorts.size() - 1);
         assertThat(testQuicksort.getUnsorted()).isEqualTo(DEFAULT_UNSORTED);
         assertThat(testQuicksort.getSorted()).isEqualTo(DEFAULT_SORTED);
-        assertThat(testQuicksort.getExecutionTime()).isEqualTo(DEFAULT_EXECUTION_TIME);
     }
 
     @Test
@@ -122,8 +118,7 @@ public class QuicksortResourceTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(quicksort.getId())))
                 .andExpect(jsonPath("$.[*].unsorted").value(hasItem(DEFAULT_UNSORTED.toString())))
-                .andExpect(jsonPath("$.[*].sorted").value(hasItem(DEFAULT_SORTED.toString())))
-                .andExpect(jsonPath("$.[*].executionTime").value(hasItem(DEFAULT_EXECUTION_TIME.intValue())));
+                .andExpect(jsonPath("$.[*].sorted").value(hasItem(DEFAULT_SORTED.toString())));
     }
 
     @Test
@@ -137,8 +132,7 @@ public class QuicksortResourceTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(quicksort.getId()))
             .andExpect(jsonPath("$.unsorted").value(DEFAULT_UNSORTED.toString()))
-            .andExpect(jsonPath("$.sorted").value(DEFAULT_SORTED.toString()))
-            .andExpect(jsonPath("$.executionTime").value(DEFAULT_EXECUTION_TIME.intValue()));
+            .andExpect(jsonPath("$.sorted").value(DEFAULT_SORTED.toString()));
     }
 
     @Test
@@ -158,8 +152,6 @@ public class QuicksortResourceTest {
         // Update the quicksort
         quicksort.setUnsorted(UPDATED_UNSORTED);
         quicksort.setSorted(UPDATED_SORTED);
-        quicksort.setExecutionTime(UPDATED_EXECUTION_TIME);
-        
 
         restQuicksortMockMvc.perform(put("/api/quicksorts")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -172,7 +164,6 @@ public class QuicksortResourceTest {
         Quicksort testQuicksort = quicksorts.get(quicksorts.size() - 1);
         assertThat(testQuicksort.getUnsorted()).isEqualTo(UPDATED_UNSORTED);
         assertThat(testQuicksort.getSorted()).isEqualTo(UPDATED_SORTED);
-        assertThat(testQuicksort.getExecutionTime()).isEqualTo(UPDATED_EXECUTION_TIME);
     }
 
     @Test
