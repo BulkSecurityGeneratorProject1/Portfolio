@@ -7,7 +7,7 @@ angular.module('portfolioApp')
                 parent: 'entity',
                 url: '/quicksorts',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: [],
                     pageTitle: 'Quicksorts'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('portfolioApp')
                 parent: 'entity',
                 url: '/quicksort/{id}',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: [],
                     pageTitle: 'Quicksort'
                 },
                 views: {
@@ -42,7 +42,7 @@ angular.module('portfolioApp')
                 parent: 'quicksort',
                 url: '/new',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: []
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -65,7 +65,7 @@ angular.module('portfolioApp')
                 parent: 'quicksort',
                 url: '/{id}/edit',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: []
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
