@@ -117,7 +117,6 @@ var PlayScreen = me.ScreenObject.extend(
 //		me.game.sort();
 
 		// play the ingame background music
-		me.audio.playTrack("start");
 		me.audio.playTrack("background");
 
 		me.input.bindKey(me.input.KEY.ESC, "escape", true);

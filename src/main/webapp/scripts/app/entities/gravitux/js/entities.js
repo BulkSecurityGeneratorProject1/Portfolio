@@ -45,7 +45,6 @@ var PlayerEntity = me.ObjectEntity.extend(
 	// update the player pos
 	update: function()
 	{
-		console.log(gravity);
 		// movement when gravity is top or bottom
 		if (gravity === 'top' || gravity === 'bottom')
 		{
@@ -305,6 +304,10 @@ var soundButton = me.GUI_Object.extend(
 			image: "sound_on"
 		});
 
+        me.audio.enable();
+        this.image = me.loader.getImage("sound_on");
+        me.audio.playTrack("background");
+
 		// makes sound button stay when level is changed
 		this.isPersistent = true;
 	},
@@ -397,7 +400,7 @@ var LevelEntity = me.LevelEntity.extend(
 		{
 			if (levelCurrent > 1)
 			{
-				me.audio.playTrack("win");	// should be done more elegant
+				me.audio.play("win");	// should be done more elegant
 			}
 
 			settings.to = levelCurrent + 1;
