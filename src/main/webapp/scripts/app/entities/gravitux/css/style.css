@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'header_font';
+    src: url('/scripts/app/entities/gravitux/res/fonts/BRLNSDB.TTF');
+}
+
+@font-face {
+    font-family: 'body_font';
+    src: url('/scripts/app/entities/gravitux/res/fonts/BRLNSR.TTF');
+}
+
+.gravitux #wrapper {
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+
+.gravitux h1 {
+    margin-top: 15px;
+	margin-bottom: 15px;
+    font-family: body_font, serif;
+}
+
+.gravitux p {
+    margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.gravitux #footer {
+    margin-top: 15px;
+}
+
+.gravitux #framecounter{
+	color: #FFFFFF;
+	position: absolute;
+	font-size: 10px;
+	font-family: header_font, serif;
+}
