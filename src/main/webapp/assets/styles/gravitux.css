@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'header_font';
-    src: url('/scripts/app/entities/gravitux/res/fonts/BRLNSDB.TTF');
+    src: url('/assets/gravitux/fonts/BRLNSDB.TTF');
 }
 
 @font-face {
     font-family: 'body_font';
-    src: url('/scripts/app/entities/gravitux/res/fonts/BRLNSR.TTF');
+    src: url('/assets/gravitux/fonts/BRLNSR.TTF');
 }
 
 .gravitux #wrapper {

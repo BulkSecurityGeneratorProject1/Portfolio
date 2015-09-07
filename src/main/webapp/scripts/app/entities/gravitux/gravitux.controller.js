@@ -8,43 +8,43 @@ angular.module('portfolioApp')
         /****************************************************************************************/
         var g_resources = [
             // our level tileset
-            {name: "objects", type: "image", src: "scripts/app/entities/gravitux/res/level/tilesets/objects.png"},
-            {name: "solid", type: "image", src: "scripts/app/entities/gravitux/res/level/tilesets/solid.png"},
-            {name: "textures", type: "image", src: "scripts/app/entities/gravitux/res/level/tilesets/textures.png"},
+            {name: "objects", type: "image", src: "assets/gravitux/level/tilesets/objects.png"},
+            {name: "solid", type: "image", src: "assets/gravitux/level/tilesets/solid.png"},
+            {name: "textures", type: "image", src: "assets/gravitux/level/tilesets/textures.png"},
             // our levels
-            {name: "1", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_1.tmx"},
-            {name: "2", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_2.tmx"},
-            {name: "3", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_3.tmx"},
-            {name: "4", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_4.tmx"},
-            {name: "5", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_5.tmx"},
-            {name: "6", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_6.tmx"},
-            {name: "7", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_7.tmx"},
-            {name: "8", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_8.tmx"},
-            {name: "9", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_9.tmx"},
-            {name: "10", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_10.tmx"},
-            {name: "11", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_11.tmx"},
-            {name: "12", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_12.tmx"},
-            {name: "13", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_13.tmx"},
-            {name: "14", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_14.tmx"},
-            {name: "15", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_15.tmx"},
-            {name: "16", type: "tmx", src: "scripts/app/entities/gravitux/res/level/level_16.tmx"},
+            {name: "1", type: "tmx", src: "assets/gravitux/level/level_1.tmx"},
+            {name: "2", type: "tmx", src: "assets/gravitux/level/level_2.tmx"},
+            {name: "3", type: "tmx", src: "assets/gravitux/level/level_3.tmx"},
+            {name: "4", type: "tmx", src: "assets/gravitux/level/level_4.tmx"},
+            {name: "5", type: "tmx", src: "assets/gravitux/level/level_5.tmx"},
+            {name: "6", type: "tmx", src: "assets/gravitux/level/level_6.tmx"},
+            {name: "7", type: "tmx", src: "assets/gravitux/level/level_7.tmx"},
+            {name: "8", type: "tmx", src: "assets/gravitux/level/level_8.tmx"},
+            {name: "9", type: "tmx", src: "assets/gravitux/level/level_9.tmx"},
+            {name: "10", type: "tmx", src: "assets/gravitux/level/level_10.tmx"},
+            {name: "11", type: "tmx", src: "assets/gravitux/level/level_11.tmx"},
+            {name: "12", type: "tmx", src: "assets/gravitux/level/level_12.tmx"},
+            {name: "13", type: "tmx", src: "assets/gravitux/level/level_13.tmx"},
+            {name: "14", type: "tmx", src: "assets/gravitux/level/level_14.tmx"},
+            {name: "15", type: "tmx", src: "assets/gravitux/level/level_15.tmx"},
+            {name: "16", type: "tmx", src: "assets/gravitux/level/level_16.tmx"},
             // images
-            {name: "menu_tux", type: "image", src: "scripts/app/entities/gravitux/res/images/menu_tux.png"},
-            {name: "menu_bg", type: "image", src: "scripts/app/entities/gravitux/res/images/menu_bg.png"},
-            {name: "sound_on", type: "image", src: "scripts/app/entities/gravitux/res/images/sound_on.png"},
-            {name: "sound_off", type: "image", src: "scripts/app/entities/gravitux/res/images/sound_off.png"},
+            {name: "menu_tux", type: "image", src: "assets/gravitux/images/menu_tux.png"},
+            {name: "menu_bg", type: "image", src: "assets/gravitux/images/menu_bg.png"},
+            {name: "sound_on", type: "image", src: "assets/gravitux/images/sound_on.png"},
+            {name: "sound_off", type: "image", src: "assets/gravitux/images/sound_off.png"},
             // spritesheets
-            {name: "tux", type: "image", src: "scripts/app/entities/gravitux/res/sprites/tux.png"},
-            {name: "snowstorm", type: "image", src: "scripts/app/entities/gravitux/res/sprites/snowstorm.png"},
+            {name: "tux", type: "image", src: "assets/gravitux/sprites/tux.png"},
+            {name: "snowstorm", type: "image", src: "assets/gravitux/sprites/snowstorm.png"},
             // audio resources
-            {name: "background", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 2, stream: true},
-            {name: "die", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
-            {name: "gravity", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
-            {name: "snowstorm", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
-            {name: "start", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
-            {name: "walk", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
-            {name: "win", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 3}
-            //{name: "water_hole", type: "audio", src: "scripts/app/entities/gravitux/res/audio/", channel: 1},
+            {name: "background", type: "audio", src: "assets/gravitux/audio/", channel: 2, stream: true},
+            {name: "die", type: "audio", src: "assets/gravitux/audio/", channel: 1},
+            {name: "gravity", type: "audio", src: "assets/gravitux/audio/", channel: 1},
+            {name: "snowstorm", type: "audio", src: "assets/gravitux/audio/", channel: 1},
+            {name: "start", type: "audio", src: "assets/gravitux/audio/", channel: 1},
+            {name: "walk", type: "audio", src: "assets/gravitux/audio/", channel: 1},
+            {name: "win", type: "audio", src: "assets/gravitux/audio/", channel: 3}
+            //{name: "water_hole", type: "audio", src: "assets/gravitux/audio/", channel: 1},
         ];
 
         /****************************************************************************************/
@@ -120,7 +120,5 @@ angular.module('portfolioApp')
         /****************************************************************************************/
         /*										bootstrap										*/
         /****************************************************************************************/
-        window.onReady(function () {
-            jsApp.onload();
-        });
+        jsApp.onload();
     });

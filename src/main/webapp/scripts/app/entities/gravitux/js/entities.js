@@ -301,12 +301,8 @@ var soundButton = me.GUI_Object.extend(
 		{
 			spritewidth: 24,
 			spriteheight: 24,
-			image: "sound_on"
+			image: "sound_off"
 		});
-
-        me.audio.enable();
-        this.image = me.loader.getImage("sound_on");
-        me.audio.playTrack("background");
 
 		// makes sound button stay when level is changed
 		this.isPersistent = true;
