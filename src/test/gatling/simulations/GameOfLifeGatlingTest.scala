@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory
 import scala.concurrent.duration._
 
 /**
- * Performance test for the LifeSimulation entity.
+ * Performance test for the GameOfLife entity.
  */
-class LifeSimulationGatlingTest extends Simulation {
+class GameOfLifeGatlingTest extends Simulation {
 
     val context: LoggerContext = LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext]
     // Log all HTTP requests
@@ -37,7 +37,7 @@ class LifeSimulationGatlingTest extends Simulation {
         "X-CSRF-TOKEN" -> "${csrf_token}"
     )
 
-    val scn = scenario("Test the LifeSimulation entity")
+    val scn = scenario("Test the GameOfLife entity")
         .exec(http("First unauthenticated request")
         .get("/api/account")
         .headers(headers_http)
@@ -59,26 +59,26 @@ class LifeSimulationGatlingTest extends Simulation {
         .check(headerRegex("Set-Cookie", "CSRF-TOKEN=(.*); [P,p]ath=/").saveAs("csrf_token")))
         .pause(10)
         .repeat(2) {
-            exec(http("Get all lifeSimulations")
-            .get("/api/lifeSimulations")
+            exec(http("Get all gameOfLifes")
+            .get("/api/gameOfLifes")
             .headers(headers_http_authenticated)
             .check(status.is(200)))
             .pause(10 seconds, 20 seconds)
-            .exec(http("Create new lifeSimulation")
-            .post("/api/lifeSimulations")
+            .exec(http("Create new gameOfLife")
+            .post("/api/gameOfLifes")
             .headers(headers_http_authenticated)
             .body(StringBody("""{"id":null}""")).asJSON
             .check(status.is(201))
-            .check(headerRegex("Location", "(.*)").saveAs("new_lifeSimulation_url")))
+            .check(headerRegex("Location", "(.*)").saveAs("new_gameOfLife_url")))
             .pause(10)
             .repeat(5) {
-                exec(http("Get created lifeSimulation")
-                .get("${new_lifeSimulation_url}")
+                exec(http("Get created gameOfLife")
+                .get("${new_gameOfLife_url}")
                 .headers(headers_http_authenticated))
                 .pause(10)
             }
-            .exec(http("Delete created lifeSimulation")
-            .delete("${new_lifeSimulation_url}")
+            .exec(http("Delete created gameOfLife")
+            .delete("${new_gameOfLife_url}")
             .headers(headers_http_authenticated))
             .pause(10)
         }

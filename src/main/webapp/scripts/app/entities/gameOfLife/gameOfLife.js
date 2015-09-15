@@ -3,19 +3,19 @@
 angular.module('portfolioApp')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('lifeSimulation', {
+            .state('gameOfLife', {
                 parent: 'entity',
-                url: '/lifeSimulations',
+                url: '/gameOfLifes',
                 data: {
                     roles: [],
-                    pageTitle: 'LifeSimulations'
+                    pageTitle: 'GameOfLifes'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/entities/lifeSimulation/lifeSimulations.html',
-                        controller: 'LifeSimulationController'
+                        templateUrl: 'scripts/app/entities/gameOfLife/gameOfLifes.html',
+                        controller: 'GameOfLifeController'
                     }
                 },
                 resolve: {}
-            })
+            });
     });
