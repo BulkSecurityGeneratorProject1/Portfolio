@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('portfolioApp')
-    .controller('GameOfLifeController', function ($scope, GameOfLife) {
+    .controller('GameOfLifeController', function () {
         var canvas = document.getElementById('game'); // for some reason angular.element doesn't work here
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = "#FF0000";
