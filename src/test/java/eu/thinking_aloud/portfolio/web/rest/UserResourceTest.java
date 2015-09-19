@@ -3,6 +3,7 @@ package eu.thinking_aloud.portfolio.web.rest;
 import eu.thinking_aloud.portfolio.Application;
 import eu.thinking_aloud.portfolio.config.MongoConfiguration;
 import eu.thinking_aloud.portfolio.repository.UserRepository;
+import eu.thinking_aloud.portfolio.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,12 +37,16 @@ public class UserResourceTest {
     @Inject
     private UserRepository userRepository;
 
+    @Inject
+    private UserService userService;
+
     private MockMvc restUserMockMvc;
 
     @Before
     public void setup() {
         UserResource userResource = new UserResource();
         ReflectionTestUtils.setField(userResource, "userRepository", userRepository);
+        ReflectionTestUtils.setField(userResource, "userService", userService);
         this.restUserMockMvc = MockMvcBuilders.standaloneSetup(userResource).build();
     }
 

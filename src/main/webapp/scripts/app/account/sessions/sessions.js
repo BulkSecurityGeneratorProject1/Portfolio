@@ -7,7 +7,7 @@ angular.module('portfolioApp')
                 parent: 'account',
                 url: '/sessions',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'Sessions'
                 },
                 views: {

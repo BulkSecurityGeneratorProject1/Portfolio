@@ -7,7 +7,7 @@ angular.module('portfolioApp')
                 parent: 'account',
                 url: '/register',
                 data: {
-                    roles: [],
+                    authorities: [],
                     pageTitle: 'Registration'
                 },
                 views: {

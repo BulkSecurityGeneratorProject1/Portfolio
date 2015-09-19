@@ -24,6 +24,11 @@ mail:
     from: Portfolio@localhost
 
 
+spring:
+    mvc:
+        favicon:
+            enabled: false
+
 swagger:
     title: Portfolio API
     description: Portfolio applications and beyond!

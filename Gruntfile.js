@@ -1,4 +1,4 @@
-// Generated on 2015-09-04 using generator-jhipster 2.20.0
+// Generated on 2015-09-19 using generator-jhipster 2.21.0
 'use strict';
 var fs = require('fs');
 
@@ -243,8 +243,7 @@ module.exports = function (grunt) {
                         '*.html',
                         'scripts/**/*.html',
                         'assets/images/**/*.{png,gif,webp,jpg,jpeg,svg}',
-                        'assets/fonts/*',
-                        'assets/gravitux/**'
+                        'assets/fonts/*'
                     ]
                 }, {
                     expand: true,
@@ -392,8 +391,5 @@ module.exports = function (grunt) {
         'buildcontrol:openshift'
     ]);
 
-    grunt.registerTask('default', [
-        'test',
-        'build'
-    ]);
+    grunt.registerTask('default', ['serve']);
 };

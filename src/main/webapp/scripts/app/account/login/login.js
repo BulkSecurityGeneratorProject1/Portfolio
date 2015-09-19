@@ -7,7 +7,7 @@ angular.module('portfolioApp')
                 parent: 'account',
                 url: '/login',
                 data: {
-                    roles: [], 
+                    authorities: [], 
                     pageTitle: 'Authentication'
                 },
                 views: {

@@ -7,7 +7,7 @@ angular.module('portfolioApp')
                 parent: 'admin',
                 url: '/logs',
                 data: {
-                    roles: ['ROLE_ADMIN'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'Logs'
                 },
                 views: {
