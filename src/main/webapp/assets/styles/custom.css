@@ -1,0 +1,11 @@
+.entity p, .entity li {
+    width: 800px;
+}
+
+.gravitux #framecounter{
+    color: #FFFFFF;
+    position: absolute;
+    margin: 2px 3px;
+    font-size: 12px;
+    font-family: header_font, serif;
+}

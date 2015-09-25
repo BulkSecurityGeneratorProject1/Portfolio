@@ -1,34 +1,33 @@
-<div class="gameOfLife">
-    <h2>Conway's Game of Life</h2>
-    <jh-alert></jh-alert>
+<div class="entity">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <canvas id="game" width="800" height="600" style="border:1px solid #000000;">
-                    Your Browser does not support HTML5 canvas. If you see this you should REALLY update it.
-                </canvas>
-                <h3>Background</h3>
-                <p>
-                    This is a simple implementation of Conway's Game of Life from 1970.
-                    It is written in pure Javascript with the use of HTML5 canvas.
-                    The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia
-                    article</a> stats the following rules:
-                </p>
-                <h3>Rules</h3>
-                <p>
-                    The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells,
-                    each of which is in one of two possible states, alive or dead. Every cell interacts with its eight
-                    neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each
-                    step in time, the following transitions occur:
-                <ol>
-                    <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
-                    <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
-                    <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
-                    <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-                    </li>
-                </ol>
-                </p>
-            </div>
-        </div>
+        <h2>Conway's Game of Life</h2>
+        <jh-alert></jh-alert>
+        <canvas id="game" width="800" height="600" style="border:1px solid #000000;">
+            Your Browser does not support HTML5 canvas. If you see this you should REALLY update it.
+        </canvas>
+        <h3>Background</h3>
+
+        <p>
+            This is a simple implementation of Conway's Game of Life from 1970.
+            It is written in pure Javascript with the use of HTML5 canvas.
+            The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia
+            article</a> stats the following rules:
+        </p>
+
+        <h3>Rules</h3>
+
+        <p>
+            The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells,
+            each of which is in one of two possible states, alive or dead. Every cell interacts with its eight
+            neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each
+            step in time, the following transitions occur:
+        </p>
+        <ol>
+            <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+            <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+            <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+            <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+            </li>
+        </ol>
     </div>
 </div>
