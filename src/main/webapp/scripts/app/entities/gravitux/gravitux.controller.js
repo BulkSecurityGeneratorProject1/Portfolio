@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('portfolioApp')
-    .controller('GravituxController', function () {
+    .controller('GravituxController', function ($scope) {
 
         /****************************************************************************************/
         /*									game resources										*/
@@ -121,4 +121,10 @@ angular.module('portfolioApp')
         /*										bootstrap										*/
         /****************************************************************************************/
         jsApp.onload();
+
+        $scope.$on('$destroy', function(next, current) {
+            console.log('changing page!');
+            me.audio.disable();
+            me.unloadAll();
+        });
     });
